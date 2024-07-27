@@ -68,3 +68,7 @@ Precision/recall on test set: 96.43%/99.00%
 ```
 TRAIN_DATASET=学習させたいデータセットのファイルパス
 ```
+## 後片付け
+```
+docker-compose down -v
+```
