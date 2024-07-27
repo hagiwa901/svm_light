@@ -1,0 +1,14 @@
+services:
+    svm_learn:
+        container_name: svm_light
+        build: './svm_light'
+        volumes:
+            - ./${TRAIN_DATASET}:/${TRAIN_DATASET}
+        command: /svm_learn ${TRAIN_DATASET}/train.dat ${TRAIN_DATASET}/model
+    
+    svm_classify:
+        container_name: svm_light
+        build: './svm_light'
+        volumes:
+            - ./${TRAIN_DATASET}:/${TRAIN_DATASET}
+        command: /svm_classify ${TRAIN_DATASET}/test.dat ${TRAIN_DATASET}/model ${TRAIN_DATASET}/predictions
